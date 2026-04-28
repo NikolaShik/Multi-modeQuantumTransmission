@@ -1,2 +1,2 @@
-# Multi-modeQuantumTransmission
-Calculation of transmission coefficeint in multi-mode quantum-mechanical system
+# General discription
+Multi-modeQuantumTransmission is a python code to calculate energy and parameter resolved quantum transmission coefficient of a quasi-1D system with arbitrary transverse potential profiles and step-wise potential along the propagation direction. S-matrix formalism is used for arbitrary number of transverse modes. Transmission at different points in the energy-parameter space is calculated in parallel.
