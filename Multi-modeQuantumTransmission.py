@@ -14,6 +14,7 @@ try:
 	from skfem.helpers import dot, grad
 except ImportError:
 	from skfem.models.helpers import dot, grad
+from tqdm import tqdm
 
 # Physical constants (SI)
 hbar = 1.054571817e-34
@@ -285,7 +286,7 @@ def plot_transmission_density(energy_range, param_range,
 	transmission_flat = Parallel(n_jobs=n_jobs, backend=backend)(
 		# Parameters of Transmission_S function: ENERGY, LL, D1, D2, D3, D4
 		delayed(Transmission_S)(e, p, 3, 1, 1.6, 19) 
-		for e, p in zip(energy_flat, param_flat)
+		for e, p in tqdm(zip(energy_flat, param_flat), total=len(energy_flat), desc="Computing transmission") # zip(energy_flat, param_flat)
 	)
 	
 	# Reshape back to 2D
